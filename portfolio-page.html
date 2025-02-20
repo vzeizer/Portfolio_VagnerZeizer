@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Task 1: Styled name on top-left */
+        .name-header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            z-index: 1000;
+        }
+
+        /* Task 2: Navigation bar */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 20px;
+            min-width: 500px;    /* Minimum width */
+            min-height: 120px;    /* Minimum height */
+            background-color: rgb(0, 200, 255);
+            z-index: 1000;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+        }
+
+        /* Task 3: About Me Section */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        #about * {
+       transition: all 0.3s ease;
+        }
+
+        #about *:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        /* Task 4: Skills Section */
+        #skills {
+            background-color: white;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .skill-card i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        /* Task 5: Projects Section */
+        #projects {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+
+        /* Task 6 & 7: Recommendations Section */
+        #recommendations {
+            background-color: white;
+            text-align: center;
+        }
+
+        .recommendations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .recommendation-card {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Task 8: Home Icon */
+        .home-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #2c3e50;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .iconbutton{
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+            background-color: #7600bc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            right: 3%;
+            bottom: 3%;
+            cursor: pointer;
+        }
+
+        /* Form Styles */
+        .recommendation-form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Task 1: Name Header -->
+    <div class="name-header">Dr. Vagner Zeizer Carvalho Paes</div>
+
+    <!-- Task 2: Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#recommendations">Recommendations</a>
+    </nav>
+
+    <!-- Task 3: About Me Section -->
+    <section id="about">
+        <img src="./vagner_perfil_azul_short.jpeg" alt="Profile Picture" class="profile-img">
+        <h2>Vagner Zeizer</h2>
+        <p>Passionate Data Scientist/ Developer with almost 4 years of experience in analyzing and modeling the data deeply, as well as making Web Applications. <br>
+        Specialized in Data Science and Software development with expertise in Python, TensorFlow, PyTorch, Docker, SQL, Git, HMTL, CSS, JavaScript, React, and Node.js.  <br>
+        Holds a Phd in Physics from Federal University of Rio Grande do Sul, Brazil, and post-docs in Computational Physics.</p>
+    </section>
+
+    <!-- Task 4: Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>Python for Data Science</h3>
+                <p> Advanced proficiency in Python and AI-related Frameworks and tools. </p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>AI Engineering</h3>
+                <p> Expertise in tools related to Deep Learning, such as TensorFlow. </p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>AI Engineering</h3>
+                <p> Expertise in tools related to Deep Learning, such as PyTorch. </p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>Web Tools</h3>
+                <p> Knowledge of Web Development tools, such as, HMTL, and CSS, Django, Flask. </p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>Web Tools</h3>
+                <p> Knowledge of JavaScript and related frameworks, such as React. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 5: Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Data Science Analysis of patients in Healthcare</h3>
+                <p>Worked on deep data analysis of a healthcare startup in order to get insights from patients data and obtain new treatment improvements.</p>
+            </div>
+            <div class="project-card">
+                <h3>Power Transformers's downtime prediction</h3>
+                <p> Worked in a data science project for modeling the Power Transformers's downtime with some days in advance to the failure event in collaboration with Furnas/Eletrobras. </p>
+            </div>
+            <div class="project-card">
+                <h3>Inspection based on Risk</h3>
+                <p>Participated in the whole project of developing a Web application for predicting the likelihood of failure within a time window for pipes in partnership with Petrobras. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 6 & 7: Recommendations Section -->
+    <section id="recommendations">
+        <h2>Recommendations</h2>
+        <div class="recommendations-container" id="recommendations-list">
+            <div class="recommendation-card">
+                <h3>Gabriel Machado</h3>
+                <p>Data Scientist at Instituto ECOA/PUC-Rio</p>
+                <p>"I am pleased to recommend Vagner Paes for his strong proficiency in Data Science and modeling. Vagner consistently displays a strong work ethic and adaptability, allowing him to effectively tackle complex challenges. His availability and willingness to contribute make him a reliable team member.
+
+					Vagner's expertise in modeling and Data Science is evident through his analytical skills and practical application of various techniques. His ability to derive actionable insights from intricate datasets underscores his value. Moreover, his collaborative approach and knowledge sharing greatly contribute to a positive team dynamic.
+
+					With his solid technical skills and dedication to his work, Vagner is a valuable asset in any project related to Data Science and modeling. I highly recommend Vagner Paes based on his proven abilities and his commitment to delivering quality results in his field."</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>Marcelo Collono</h3>
+                <p>Data Science Specialist</p>
+                <p>"Vagner é muito dedicado, muitas vontade de aprender coisas novas, capacidade de programação em Python para soluções de Discovery Analytics e soluções envolvendo Machine Learning. Grande potencial para desenvolvimento de produtos digitais integrados. Eu recomendo!"</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>Marcelo Sousa</h3>
+                <p>Entrepreneur Scientist</p>
+                <p>"Eu supervisionei o trabalho do Vagner na Bright Photomedicine e posso afirmar que o Vagner é uma pessoa que faz o seu trabalho de forma assídua, cumprindo prazos e é muito esforçado. Ele trouxe resultados interessantes para a empresa encontrando padrões nos dados dos nossos pacientes e produzindo artigos que foram e serão publicados em revistas internacionais envolvendo análise profunda dos dados, com escrita científica de alto nível."</p>
+            </div>
+        </div>
+
+        <div class="recommendation-form">
+            <h3>Add a Recommendation</h3>
+            <input type="text" id="recommender-name" placeholder="Your Name" required>
+            <input type="text" id="recommender-role" placeholder="Your Role" required>
+            <textarea id="recommendation-text" placeholder="Your Recommendation" required></textarea>
+            <button onclick="addRecommendation()">Submit Recommendation</button>
+        </div>
+    </section>
+
+    <!-- Task 8: Home Icon -->
+        <div class="iconbutton">
+            <a href="#about">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+          </div>
+      
+
+    <script>
+        // Task 7 & 9: Add new recommendations with confirmation
+        function addRecommendation() {
+            const name = document.getElementById('recommender-name').value;
+            const role = document.getElementById('recommender-role').value;
+            const text = document.getElementById('recommendation-text').value;
+
+            if (name && role && text) {
+                const newRecommendation = document.createElement('div');
+                newRecommendation.className = 'recommendation-card';
+                newRecommendation.innerHTML = `
+                    <h3>${name}</h3>
+                    <p>${role}</p>
+                    <p>"${text}"</p>
+                `;
+
+                document.getElementById('recommendations-list').appendChild(newRecommendation);
+
+                // Reset form
+                document.getElementById('recommender-name').value = '';
+                document.getElementById('recommender-role').value = '';
+                document.getElementById('recommendation-text').value = '';
+
+                // Task 9: Show confirmation popup
+                alert('Thank you for your recommendation!');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+</body>
+</html>
