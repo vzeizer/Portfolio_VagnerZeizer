@@ -20,6 +20,7 @@
         /* Task 1: Styled name on top-left */
         .name-header {
             position: fixed;
+            min-height: 120px; /* Minimum height */
             top: 20px;
             left: 20px;
             font-size: 24px;
@@ -27,6 +28,18 @@
             color: #2c3e50;
             z-index: 1000;
         }
+
+        .name-personal-info {
+            position: relative;
+            min-height: 30px; /* Minimum height */
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color:blue;
+            z-index: 1000;
+        }
+
 
         /* Task 2: Navigation bar */
         nav {
@@ -208,6 +221,82 @@
         h2 {
             margin-bottom: 20px;
         }
+        #github, #linkedin, #email, #lattes {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            height: 20px;
+        }
+        #github h2, #linkedin h2, #email h2, #lattes h2 {
+            margin-bottom: 10px;
+        }
+        #github p, #linkedin p, #email p, #lattes p {
+            margin: 0;
+        }
+        #github a, #linkedin a, #email a, #lattes a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        #github a:hover, #linkedin a:hover, #email a:hover, #lattes a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                position: static;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .name-header {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .skills-container, .projects-container, .recommendations-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .name-header {
+                font-size: 20px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .skill-card, .project-card, .recommendation-card {
+                padding: 15px;
+            }
+        }
+        @media (max-width: 320px) {
+            .name-header {
+                font-size: 18px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .skill-card, .project-card, .recommendation-card {
+                padding: 10px;
+            }
+        }
+
+        
     </style>
 </head>
 <body>
@@ -220,7 +309,8 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#recommendations">Recommendations</a>
-    </nav>
+</nav>
+
 
     <!-- Task 3: About Me Section -->
     <section id="about">
@@ -253,12 +343,12 @@
             <div class="skill-card">
                 <i class="fab fa-js"></i>
                 <h3>Web Tools</h3>
-                <p> Knowledge of Web Development tools, such as, HMTL, and CSS, Django, Flask. </p>
+                <p> Knowledge and Real-World Experience with Web Development tools, such as, HMTL, and CSS, Django, Flask. </p>
             </div>
             <div class="skill-card">
                 <i class="fab fa-js"></i>
-                <h3>Web Tools</h3>
-                <p> Knowledge of JavaScript and related frameworks, such as React. </p>
+                <h3>Web Development Tools</h3>
+                <p> Knowledge of JavaScript and related frameworks, such as React, and containerization with Docker. </p>
             </div>
         </div>
     </section>
@@ -269,15 +359,20 @@
         <div class="projects-container">
             <div class="project-card">
                 <h3>Data Science Analysis of patients in Healthcare</h3>
-                <p>Worked on deep data analysis of a healthcare startup in order to get insights from patients data and obtain new treatment improvements.</p>
+                <p>Worked on deep data and statistical analysis of a healthcare Startup to get insights from patients data and obtain/suggest new treatment improvements.</p>
             </div>
             <div class="project-card">
                 <h3>Power Transformers's downtime prediction</h3>
-                <p> Worked in a data science project for modeling the Power Transformers's downtime with some days in advance to the failure event in collaboration with Furnas/Eletrobras. </p>
+                <p> Worked in a data science project for modeling the Power Transformers's downtime with some days in advance to the failure event in collaboration with Furnas/Eletrobras.
+                    Two indicators of the power transformer were modeled: CAI (Chromatographic Assay Indicator) and EFRI (Electric Failure Risk Indicator). The models were built with Python and TensorFlow and put into production.</p>
+                </p>
             </div>
             <div class="project-card">
                 <h3>Inspection based on Risk</h3>
-                <p>Participated in the whole project of developing a Web application for predicting the likelihood of failure within a time window for pipes in partnership with Petrobras. </p>
+                <p>Participated in the whole project of developing Web applications for predicting the likelihood of failure within a time window for pipes in partnership with Petrobras. 
+                    The project was developed in Python (Django) and JavaScript, React, Bootstrap and jQuery, with the front-end developed mainly in Javascript and the back-end in Django. 
+                    The project is under development.
+                </p>
             </div>
         </div>
     </section>
@@ -306,7 +401,7 @@
                 <p>"I supervised Vagner's work at Bright Photomedicine and can affirm that Vagner is a person who performs his work diligently, meets deadlines and is very hardworking. He brought interesting results to the company by finding patterns in our patient data and producing articles that were and will be published in international journals involving in-depth data analysis, with high-level scientific writing."</p>
             </div>
         </div>
-
+<!--
         <div class="recommendation-form">
             <h3>Add a Recommendation</h3>
             <input type="text" id="recommender-name" placeholder="Your Name" required>
@@ -315,7 +410,7 @@
             <button onclick="addRecommendation()">Submit Recommendation</button>
         </div>
     </section>
-
+-->
     <!-- Task 8: Home Icon -->
         <div class="iconbutton">
             <a href="#about">
@@ -324,8 +419,16 @@
                 </svg>
             </a>
           </div>
+
+          
+          <br>
+          <div class="name-personal-info">Check out my projects on GitHub: <a href="https://github.com/vzeizer" target="_blank">GitHub Profile</a></div>
+          <div class="name-personal-info">Connect with me on LinkedIn: <a href="https://www.linkedin.com/in/vagner-zeizer-carvalho-paes/" target="_blank">LinkedIn Profile</a></div>
+          <div class="name-personal-info">Contact me at: <a href="vzeizer@gmail.com"> vzeizer@gmail.com </a></div>
+          <div class="name-personal-info">Check my Lattes Curriculum: <a href="http://lattes.cnpq.br/8017238644593787" target="_blank">Lattes Profile</a></div>
       
 
+<!-- 
     <script>
         // Task 7 & 9: Add new recommendations with confirmation
         function addRecommendation() {
@@ -356,5 +459,8 @@
             }
         }
     </script>
+
+-->
+
 </body>
 </html>
