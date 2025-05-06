@@ -133,14 +133,26 @@
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 50px;
             margin-top: 40px;
         }
 
         .project-card {
             padding: 20px;
+            text-align: justify;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+
+        .project-card img {
+            transform: scale(1.3); /* Scales the image by 20% */
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             background-color: white;
         }
 
@@ -400,7 +412,7 @@
         <div class="projects-container">
             <div class="project-card">
                 <img src="./bright.png" alt="Bright Photomedicine" style="width: 100px; height: auto;">
-                <h3>Data Science Analysis of patients in Healthcare</h3>
+                <h3 style="text-align: center;">Data Science Analysis of patients in Healthcare</h3>
                 <p>Worked on deep data and statistical analysis of a healthcare Startup to get insights from patients data and obtain/suggest new treatment improvements.
                 The project was developed in Python, with the main libraries being Pandas, NumPy, Scikit-learn, seaborn, and Matplotlib.
                 Articles were produced and published in international journals, with high-level scientific writing, aiming to corroborate the Startup's medical treatment.
@@ -409,7 +421,7 @@
             <div class="project-card">
 
                 <img src="./eletrobras.png" alt="Eletrobras-Furnas" style="width: 100px; height: auto;">
-                <h3>Power Transformers's downtime prediction</h3>
+                <h3 style="text-align: center;">Power Transformers's downtime prediction</h3>
                 <p> Worked in a data science project for modeling the Power Transformers's downtime with some days in advance to the failure event in collaboration with Furnas/Eletrobras.
                     Two indicators of the power transformer were modeled: CAI (Chromatographic Assay Indicator) and EFRI (Electric Failure Risk Indicator). The models were built with Python and TensorFlow and put into production.</p>
                 </p>
@@ -417,7 +429,7 @@
             
             <div class="project-card">
                 <img src="./petrobras.png" alt="Petrobras" style="width: 100px; height: 160 px;">
-                <h3>Inspection based on Risk</h3>
+                <h3 style="text-align: center;">Inspection based on Risk</h3>
                 <p>Participated in the whole project of developing Web applications for predicting the likelihood of failure within a time window for pipes in partnership with Petrobras. 
                     The project was developed in Python (Django) and JavaScript, React, Bootstrap and jQuery, with the front-end developed mainly in Javascript and the back-end in Django. 
                     The project is under development.
